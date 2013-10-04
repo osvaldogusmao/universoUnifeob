@@ -4,7 +4,12 @@
  */
 package br.edu.unifeob.universounifeob.controller;
 
+import br.edu.unifeob.universounifeob.dao.QuestionarioDAO;
+import br.edu.unifeob.universounifeob.model.Pergunta;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,9 +20,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/identificacao")
 public class IdentificacaoController {
     
+    @RequestMapping(value = "/identifica")
     public String identificacao(){
-        
         return "/identificacao/identifica";
+    }
+    
+    @RequestMapping(value = "/iniciar")
+    public String criaSessao(String nome, HttpSession httpSession, Model model){
+        
+        httpSession.setAttribute("nome", nome);
+
+        List<Pergunta> perguntas = new QuestionarioDAO().listaPerguntas();
+        
+        model.addAttribute("perguntas", perguntas);
+        
+        return "/questionario/questionario";
     }
     
     

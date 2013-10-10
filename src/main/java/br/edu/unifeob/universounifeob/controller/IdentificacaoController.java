@@ -26,16 +26,15 @@ public class IdentificacaoController {
     }
     
     @RequestMapping(value = "/iniciar")
-    public String criaSessao(String nome, HttpSession httpSession, Model model){
+    public String criaSessao(String nome, String identificaSessao, HttpSession httpSession, Model model){
         
         httpSession.setAttribute("nome", nome);
-
+        httpSession.setAttribute("identificaSessao", identificaSessao);
+        
         List<Pergunta> perguntas = new QuestionarioDAO().listaPerguntas();
         
         model.addAttribute("perguntas", perguntas);
         
         return "/questionario/questionario";
     }
-    
-    
 }

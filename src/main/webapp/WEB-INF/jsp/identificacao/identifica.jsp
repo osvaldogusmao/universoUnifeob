@@ -16,6 +16,7 @@
         <form action='<c:url value="/identificacao/iniciar"></c:url>' method="post">
             
             <input type="text" name="nome" id="nome"/>
+            <input type="text" name="identificaSessao" id="identificaSessao"/>
             
             <input type="submit" value="Entrar"/>
             

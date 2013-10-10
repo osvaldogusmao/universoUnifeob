@@ -21,6 +21,12 @@
             30
         </session-timeout>
     </session-config>
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>Universo Unifeob - Quiz</display-name>
+            <url-pattern>*.jsp</url-pattern>
+        </jsp-property-group>
+    </jsp-config>
     <welcome-file-list>
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>

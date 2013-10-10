@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>br.edu.unifeob.universounifeob.model.Opcao</class>
     <class>br.edu.unifeob.universounifeob.model.Pergunta</class>
+    <class>br.edu.unifeob.universounifeob.model.Resposta</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.connection.username" value="root"/>
@@ -12,6 +13,7 @@
       <property name="hibernate.connection.url" value="jdbc:mysql://127.0.0.1:3306/universoUnifeob"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
     </properties>
   </persistence-unit>
 </persistence>
